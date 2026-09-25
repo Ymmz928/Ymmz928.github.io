@@ -140,7 +140,10 @@
     text-align: center;
   }
   /* ---------- 手机端：整页等比放大，贴合扫码页版式 ----------
-     桌面端保持上面的原始尺寸不变，仅在窄视口生效。 */
+     桌面端保持上面的原始尺寸不变，仅在窄视口生效。
+     注意：微信「字体大小」是通过 WebView 的 textZoom 放大文字的，CSS 拦不住，
+     所以行高一律用相对倍数，行盒用 min-height + padding 自适应撑高，
+     否则文字会顶出固定高度的盒子、压住分隔线。 */
   @media (max-width: 768px) {
     /* 参考图顶部没有灰色条，去掉桌面端 .app 的 11px 上边距 */
     .app { padding-top: 0; }
@@ -152,35 +155,48 @@
 
     .hero-text { margin-left: 25px; }
 
-    .hero-text h1 { font-size: 26px; line-height: 39px; }
+    .hero-text h1 { font-size: 26px; line-height: 1.5; }
 
     .hero-text p {
       margin-top: 10px;
       font-size: 18px;
-      line-height: 23px;
+      line-height: 1.3;
     }
 
     .section-title {
       padding: 14px 18px 6px;
       font-size: 18px;
-      line-height: 26px;
+      line-height: 1.45;
     }
 
-    /* 行分隔线同步缩进到 18px */
-    .info .row { height: 54px; padding: 0 18px; }
+    /* 行盒自适应：min-height 保底 54px，字被放大时靠 padding 撑开 */
+    .info .row {
+      min-height: 54px;
+      height: auto;
+      padding: 9px 18px;
+      gap: 12px;
+    }
+    /* 行分隔线：左侧缩进 18px，右侧顶到卡片边缘 */
     .info .row:not(:last-child)::after { left: 18px; }
 
     .info .k, .info .v { font-size: 22px; }
+    .info .k { white-space: nowrap; }   /* 左标签不折行，避免「查体单/位」 */
+    .info .v { text-align: right; }     /* 右侧换行时仍靠右对齐 */
 
     .actions { padding: 46px 46px 50px; }
 
-    .btn { height: 62px; font-size: 22px; }
+    .btn {
+      min-height: 62px;
+      height: auto;
+      padding: 14px 12px;
+      line-height: 1.2;
+    }
 
-    /* 版权行按页面 18px 边距排，用负 margin 抵消 .actions 的 46px 内边距，保证单行不折 */
+    /* 版权行按页面 18px 边距排，用负 margin 抵消 .actions 的 46px 内边距 */
     .copyright {
       margin: 47px -28px 0;
       font-size: 16px;
-      line-height: 23px;
+      line-height: 1.45;
     }
   }
 </style>
