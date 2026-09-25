@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>扫描成功</title>
+<style>
+  :root {
+    --green: #1aac19;
+    --bg: #f8f8f8;
+    --white: #fff;
+    --line: #d9d9d9;
+    --line-soft: #e5e5e5;
+    --text: #000;
+    --muted: #999;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #fff;
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+                 "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB",
+                 "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .app {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 11px;
+    background: var(--bg);
+  }
+
+  /* ---------- 头部：扫描成功 ---------- */
+  .hero {
+    display: flex;
+    align-items: center;
+    padding: 15px 16px 45px;
+    background: var(--white);
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .check {
+    flex: none;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+
+  .check svg { display: block; width: 92px; height: 92px; }
+
+  .hero-text { margin-left: 22px; }
+
+  .hero-text h1 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+  }
+
+  .hero-text p {
+    margin-top: 9px;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--muted);
+  }
+
+  /* ---------- 分组标题：详细信息 ---------- */
+  .section-title {
+    padding: 11px 16px 5px;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--muted);
+  }
+
+  /* ---------- 信息表 ---------- */
+  .info {
+    background: var(--white);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .info .row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 43.5px;
+    padding: 0 16px;
+  }
+
+  /* 行分隔线：左侧缩进 16px，右侧顶到卡片边缘 */
+  .info .row:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 16px;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .info .k { font-size: 17px; color: var(--text); }
+  .info .v { font-size: 17px; color: var(--muted); }
+
+  /* ---------- 操作区 ---------- */
+  .actions { padding: 39px 40px 40px; }
+
+  .btn {
+    display: block;
+    width: 100%;
+    height: 47px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    border: 0;
+    background: var(--green);
+    color: #fff;
+  }
+
+  .btn-ghost {
+    margin-top: 15px;
+    border: 1px solid #333;
+    background: transparent;
+    color: var(--text);
+  }
+
+  .copyright {
+    margin-top: 40px;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="app">
+
+    <section class="hero">
+      <div class="check">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.7 13.1 L10.2 16.12 L17.9 8.63"
+                fill="none" stroke="#fff" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="hero-text">
+        <h1>扫描成功</h1>
+        <p>请仔细核对人员信息</p>
+      </div>
+    </section>
+
+    <div class="section-title">详细信息</div>
+
+    <section class="info">
+      <div class="row"><span class="k">姓名</span><span class="v">康健</span></div>
+      <div class="row"><span class="k">性别</span><span class="v">男</span></div>
+      <div class="row"><span class="k">年龄</span><span class="v">48</span></div>
+      <div class="row"><span class="k">查体单位</span><span class="v">天津华兴医院</span></div>
+      <div class="row"><span class="k">创建日期</span><span class="v">2022-07-08</span></div>
+    </section>
+
+    <footer class="actions">
+      <button class="btn btn-primary" type="button">退出</button>
+      <button class="btn btn-ghost" type="button">继续验证</button>
+      <p class="copyright">Copyright © 2019 chxt.cn&nbsp; 津ICP备13006037号-2</p>
+    </footer>
+
+  </div>
+</body>
+</html>
