@@ -139,51 +139,6 @@
     color: var(--muted);
     text-align: center;
   }
-
-  /* ---------- 手机端：整页等比放大，贴合扫码页版式 ----------
-     桌面端保持上面的原始尺寸不变，仅在窄视口生效。 */
-  @media (max-width: 768px) {
-    /* 参考图顶部没有灰色条，去掉桌面端 .app 的 11px 上边距 */
-    .app { padding-top: 0; }
-
-    .hero { padding: 18px 18px 51px; }
-
-    .check { width: 119px; height: 119px; }
-    .check svg { width: 119px; height: 119px; }
-
-    .hero-text { margin-left: 25px; }
-
-    .hero-text h1 { font-size: 26px; line-height: 39px; }
-
-    .hero-text p {
-      margin-top: 10px;
-      font-size: 18px;
-      line-height: 23px;
-    }
-
-    .section-title {
-      padding: 14px 18px 6px;
-      font-size: 18px;
-      line-height: 26px;
-    }
-
-    /* 行分隔线同步缩进到 18px */
-    .info .row { height: 54px; padding: 0 18px; }
-    .info .row:not(:last-child)::after { left: 18px; }
-
-    .info .k, .info .v { font-size: 22px; }
-
-    .actions { padding: 46px 46px 50px; }
-
-    .btn { height: 62px; font-size: 22px; }
-
-    /* 版权行按页面 18px 边距排，用负 margin 抵消 .actions 的 46px 内边距，保证单行不折 */
-    .copyright {
-      margin: 47px -28px 0;
-      font-size: 16px;
-      line-height: 23px;
-    }
-  }
 </style>
 </head>
 <body>
@@ -206,11 +161,11 @@
     <div class="section-title">详细信息</div>
 
     <section class="info">
-      <div class="row"><span class="k">姓名</span><span class="v">李超</span></div>
+      <div class="row"><span class="k">姓名</span><span class="v">岳雨旺</span></div>
       <div class="row"><span class="k">性别</span><span class="v">男</span></div>
-      <div class="row"><span class="k">年龄</span><span class="v">30</span></div>
+      <div class="row"><span class="k">年龄</span><span class="v">51</span></div>
       <div class="row"><span class="k">查体单位</span><span class="v">天津华兴医院</span></div>
-      <div class="row"><span class="k">创建日期</span><span class="v">2026-05-06</span></div>
+      <div class="row"><span class="k">创建日期</span><span class="v">2022-07-08</span></div>
     </section>
 
     <footer class="actions">
