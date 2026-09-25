@@ -1,0 +1,10 @@
+# 含姓名与身份证号的敏感材料，禁止进入版本库
+高升队体检报告/
+高升队体检报告.zip
+
+# 系统 / 编辑器
+Thumbs.db
+Desktop.ini
+.DS_Store
+.claude/
+*.swp
